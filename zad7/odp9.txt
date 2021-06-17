@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8J9gnVppW3d0LEUpkzGNlmKRgf4svCwA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s23688>; rel="up"
+Last-Modified: Thu, 17 Jun 2021 01:25:38 GMT
+ETag: "6rOn4eQrgC4HdGwASSLnrS"
+Date: Thu, 17 Jun 2021 01:30:39 GMT
+Content-Type: application/json
+Content-Length: 19
+
+{"firma": "Google"}

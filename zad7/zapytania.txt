@@ -1,0 +1,35 @@
+zad1
+curl -i -XPUT -H "Content-Type: application/json" -d '{"marka": "fiat", "kolor": "czerwony", "rocznik": 1997, "powypadkowy": true}' http://172.25.112.1:8098/buckets/s23688/keys/fiat
+curl -i -XPUT -H "Content-Type: application/json" -d '{"marka": "warszawa", "kolor": "niebieski", "rocznik": 1999, "powypadkowy": false}' http://172.25.112.1:8098/buckets/s23688/keys/warszawa
+curl -i -XPUT -H "Content-Type: application/json" -d '{"marka": "audi", "kolor": "zielony", "rocznik": 2001, "powypadkowy": true}' http://172.25.112.1:8098/buckets/s23688/keys/audi
+curl -i -XPUT -H "Content-Type: application/json" -d '{"marka": "porshe", "kolor": "zolty", "rocznik": 2010, "powypadkowy": false}' http://172.25.112.1:8098/buckets/s23688/keys/porshe
+curl -i -XPUT -H "Content-Type: application/json" -d '{"marka": "ferrari", "kolor": "czerwony", "rocznik": 2019, "powypadkowy": false}' http://172.25.112.1:8098/buckets/s23688/keys/ferrari
+
+
+zad2
+curl -i -XGET  http://172.25.112.1:8098/buckets/s23688/keys/ferrari
+
+zad3
+curl -i -XPUT -H "Content-Type: application/json" -d '{"marka": "porshe", "kolor": "zolty", "rocznik": 2010, "powypadkowy": false , "ubezpieczony":true}' http://172.25.112.1:8098/buckets/s23688/keys/porshe
+
+zad4
+curl -i -XPUT -H "Content-Type: application/json" -d '{"marka": "fiat", "kolor": "czerwony", "rocznik": 1997}' http://172.25.112.1:8098/buckets/s23688/keys/fiat
+
+zad5
+curl -i -XPUT -H "Content-Type: application/json" -d '{"marka": "audi", "kolor": "brazowy", "rocznik": 2001, "powypadkowy": true}' http://172.25.112.1:8098/buckets/s23688/keys/audi
+
+zad6
+curl -i -XDELETE http://172.25.112.1:8098/buckets/s23688/keys/fiat
+
+zad7
+
+curl -i -XGET  http://172.25.112.1:8098/buckets/s23688/keys/fghjd
+
+zad8
+curl -i -XPOST -H "Content-Type: application/json" -d '{"firma": "Google"}' http://172.25.112.1:8098/buckets/s23688/keys
+
+zad9
+curl -i -XGET  http://172.25.112.1:8098/buckets/s23688/keys/NfvkQZ0qv7pRVxCZAbZFFhMimL3
+
+zad10
+curl -i -XDELETE http://172.25.112.1:8098/buckets/s23688/keys/NfvkQZ0qv7pRVxCZAbZFFhMimL3

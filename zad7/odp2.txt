@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8J9gnVppWat2FCCUy5rEyyMra3+LLAgA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s23688>; rel="up"
+Last-Modified: Thu, 17 Jun 2021 01:10:53 GMT
+ETag: "3HxrRmUdHVjkzmPcOYd2hS"
+Date: Thu, 17 Jun 2021 01:13:00 GMT
+Content-Type: application/json
+Content-Length: 80
+
+{"marka": "ferrari", "kolor": "czerwony", "rocznik": 2019, "powypadkowy": false}

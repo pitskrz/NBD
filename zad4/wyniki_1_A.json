@@ -1,0 +1,16 @@
+[
+        {
+                "_id" : "Male",
+                "cala_waga" : 346762.36,
+                "cala_wysokosc" : 825845.21,
+                "srednia_wysokosc" : 166.73636381990713,
+                "srednia_waga" : 70.01057137088632
+        },
+        {
+                "_id" : "Female",
+                "cala_waga" : 345308.08,
+                "cala_wysokosc" : 821552.1,
+                "srednia_wysokosc" : 166.81260913705583,
+                "srednia_waga" : 70.11331573604062
+        }
+]

@@ -1,0 +1,13 @@
+[{
+  "_id": "Male",
+  "value": {
+    "Srednia_waga": 69.5162527760953,
+    "Srednia_wysokosc": 166.24772864930344
+  }
+},{
+  "_id": "Female",
+  "value": {
+    "Srednia_waga": 69.62395939086295,
+    "Srednia_wysokosc": 166.3082233502538
+  }
+}]
