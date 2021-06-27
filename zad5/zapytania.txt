@@ -1,0 +1,24 @@
+zad1
+MATCH (filmy:Movie) RETURN filmy
+
+zad2
+MATCH (os: Person {name: "Hugo Weaving"})-[:ACTED_IN]->(filmy) RETURN filmy
+
+zad3
+MATCH (os: Person {name: "Hugo Weaving"})-[:ACTED_IN]->(filmy) <-[:DIRECTED]-(rez) RETURN rez
+
+zad4
+MATCH (os:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(filmy)<-[:ACTED_IN]-(ak) RETURN ak
+
+zad5
+MATCH (m:Movie {title:"The Matrix"})<-[:ACTED_IN]-(a)-[:ACTED_IN]->(filmy) RETURN filmy
+
+zad6
+MATCH (ak:Person)-[ri:ACTED_IN]->(mone) WITH ak, count(ri) AS mm RETURN ak, mm
+
+zad7
+MATCH (os:Person)-[:WROTE]->(filmy:Movie) WITH os, filmy MATCH (os)-[:DIRECTED]->(filmy) RETURN os,filmy
+
+zad8
+MATCH (os: Person {name: "Hugo Weaving"})-[:ACTED_IN]->(filmy)<-[:ACTED_IN]-(os1: Person {name: "Keanu Reeves"}) RETURN filmy
+

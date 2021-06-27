@@ -1,0 +1,3 @@
+marka=ferrari&kolor=zielony&rocznik=1999&powypadkowy=True
+marka=ferrari&kolor=fioletowy&rocznik=2000&powypadkowy=False
+not found

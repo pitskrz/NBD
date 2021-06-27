@@ -1,0 +1,67 @@
+zad1
+MATCH (mias:town {name: "Darjeeling"}), (mias2:peak {name: "Sandakphu"}) MATCH wyn = allShortestPaths((mias)-[*]->(mias2)) RETURN wyn
+
+zad2
+MATCH (mias:town {name: "Darjeeling"}), (mias2:peak {name: "Sandakphu"}), wyn = allShortestPaths((mias)-[*]->(mias2))
+WITH wyn, relationships(wyn) as rel
+WHERE ALL (r in rel WHERE r.winter = "true")
+RETURN wyn, rel
+
+zad3
+MATCH wyn = (mias:town {name: "Darjeeling"})-[r*]->(mias2:peak {name: "Sandakphu"})
+UNWIND r as rel
+WITH wyn, COLLECT(rel.distance) AS dys
+WITH wyn, reduce(acc = 0, d in dys | acc + d) as dys
+RETURN wyn, dys
+ORDER BY dys ASC
+
+
+zad4
+MATCH (lotniska:Airport)<-[:ORIGIN]-(lt:Flight)
+WITH lotniska, count(lt) as sam
+RETURN lotniska, sam
+ORDER BY sam ASC
+
+zad5
+MATCH wyn = (wyl:Airport { name:"LAX" })<-[wy1:ORIGIN]-(:Flight)-[wy2:ORIGIN|DESTINATION*..10]->(destination:Airport)
+WHERE REDUCE(ko = 0, op IN [zm IN NODES(wyn) WHERE 'Flight' IN LABELS(zm)] |
+  ko + [(op)<-[:ASSIGN]-(ticket) | ticket.price][0]
+  ) < 3000
+RETURN wyn
+
+
+zad6
+MATCH ret = (starlot:Airport { name:"LAX" })<-[l:ORIGIN]-(:Flight)-[l2:ORIGIN|DESTINATION*..10]->(destination:Airport {name: "DAY"})
+WITH ret, REDUCE(acc = 0, n IN [x IN NODES(ret) WHERE 'Flight' IN LABELS(x)] |
+  acc + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]
+  ) as cen
+RETURN ret, cen
+ORDER BY cen desc
+
+zad7 
+MATCH ret = (origin:Airport { name:"LAX" })<-[l1:ORIGIN]-(:Flight)-[l2:ORIGIN|DESTINATION*..10]->(destination:Airport {name: "DAY"})
+WITH ret, REDUCE(acc = 0, n IN [x IN NODES(ret) WHERE 'Flight' IN LABELS(x)] |
+  acc + [(n)<-[:ASSIGN]-(ticket) | ticket.price][0]
+  ) as cen
+RETURN ret, cen
+ORDER BY cen asc LIMIT 1
+
+zad8
+MATCH ret = (origin:Airport { name:"LAX" })<-[l1:ORIGIN]-(:Flight)-[l2:ORIGIN|DESTINATION*..10]->(destination:Airport {name: "DAY"})
+WITH ret, REDUCE(acc = 0, n IN [x IN NODES(ret) WHERE 'Flight' IN LABELS(x)] |
+  acc + [(n)<-[:ASSIGN]-(ticket {class: 'business'}) | ticket.price][0]
+  ) as price
+RETURN ret, price
+ORDER BY price asc LIMIT 1
+
+
+
+
+zad10
+MATCH wyn = (a1:Airport)<-[r1:ORIGIN]-(f1:Flight)-[r2:DESTINATION]->(a2:Airport)<-[r3:ORIGIN]-(f2:Flight)-[r4:DESTINATION]->(a3:Airport)
+WHERE not(a1=a2) AND not(a1=a3) AND not(a2=a3)
+WITH wyn, REDUCE(acc = 0, n IN [x IN NODES(wyn) WHERE 'Flight' IN LABELS(x)] |
+  acc + [(n)<-[:ASSIGN]-(ticket {class: 'economy'}) | ticket.price][0]
+  ) as price
+RETURN wyn, price
+ORDER BY price asc LIMIT 1
